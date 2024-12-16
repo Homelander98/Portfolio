@@ -1,0 +1,421 @@
+/* General Reset and Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #1e1e2e; /* Dark theme */
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+    background: #1e1e2e;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #28293d;
+    box-shadow: 4px 4px 6px #171722, -4px -4px 6px #2a2a3c;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar a:hover {
+    background: #33334d;
+    color: #ff5e57;
+    transform: scale(1.05);
+    animation: neon-glow 1s ease-in-out infinite;
+}
+
+@keyframes neon-glow {
+    0%, 100% {
+        text-shadow: 0 0 5px #ff5e57, 0 0 10px #ff5e57, 0 0 20px #ff5e57;
+    }
+    50% {
+        text-shadow: 0 0 10px #ff5e57, 0 0 20px #ff5e57, 0 0 40px #ff5e57;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    min-height: 100vh;
+}
+
+.hero-image {
+    width: 200px;
+    height: 200px;
+    background: #28293d;
+    border-radius: 50%;
+    box-shadow: inset 8px 8px 16px #171722, inset -8px -8px 16px #2a2a3c;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: bold;
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ff5e57;
+    animation: float 4s ease-in-out infinite;
+}
+
+.hero-description {
+    margin-top: 20px;
+    max-width: 600px;
+    font-size: 1rem;
+    color: #d1d1e0;
+    animation: slide-in 2s ease-out;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+    color: #ffffff;
+    background: #28293d;
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 4px 4px 6px #171722, -4px -4px 6px #2a2a3c;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    animation: bounce 2s infinite;
+}
+
+.hero-buttons a:hover {
+    background: #33334d;
+    color: #ff5e57;
+    transform: scale(1.1);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 20px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Footer Styling */
+.footer {
+    background: #1e1e2e;
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #2a2a3c;
+    box-shadow: 0 -4px 6px #171722;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff5e57;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-links li {
+    margin: 0;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.footer-links a:hover {
+    background: #33334d;
+    color: #ff5e57;
+    transform: scale(1.05);
+}
+
+.footer-social a {
+    color: #ffffff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #ff5e57;
+}
+
+.footer-social i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    color: #d1d1e0;
+}
+
+
+/* General Styling for the Projects Page */
+.projects-page {
+    padding: 20px;
+    color: #ffffff;
+    background: #1e1e2e;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Adds consistent spacing between sections */
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+    width: 100%;
+    max-width: 900px; /* Limits the width for larger screens */
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(145deg, #28293d, #1a1a2b);
+    border-radius: 12px;
+    box-shadow: 8px 8px 16px #171722, -8px -8px 16px #2a2a3c;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #d1d1e0;
+    margin: 20px 0;
+}
+
+.hero-buttons .github-link {
+    text-decoration: none;
+    background: #ff5e57;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .github-link:hover {
+    background: #e44a49;
+    transform: scale(1.05);
+}
+
+/* Repository Section */
+.repositories-section {
+    width: 100%;
+    max-width: 1200px; /* Centers and limits the repository section width */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ff5e57;
+}
+
+.loader {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #d1d1e0;
+}
+
+/* Grid for repositories */
+.repo-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center; /* Centers the items in the grid */
+}
+
+.repo-item {
+    background: #28293d;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 8px 8px 16px #171722, -8px -8px 16px #2a2a3c;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    max-width: 350px; /* Ensures consistent card sizes */
+}
+
+.repo-item:hover {
+    transform: scale(1.02);
+    box-shadow: 10px 10px 20px #171722, -10px -10px 20px #2a2a3c;
+}
+
+.repo-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.repo-name {
+    margin-bottom: 10px;
+}
+
+.repo-description {
+    font-size: 0.95rem;
+    color: #d1d1e0;
+    margin-bottom: 10px;
+}
+
+.repo-stats {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the badges */
+}
+
+.badge {
+    background: #33334d;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #d1d1e0;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .repo-list {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .repo-item {
+        max-width: 100%;
+    }
+}
